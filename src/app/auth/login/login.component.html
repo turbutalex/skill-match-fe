@@ -1,0 +1,15 @@
+<div class="container mt-5" style="max-width: 400px;">
+  <h2 class="mb-4">Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Email</label>
+      <input class="form-control" formControlName="email" type="email" />
+    </div>
+    <div class="mb-3">
+      <label>Password</label>
+      <input class="form-control" formControlName="password" type="password" />
+    </div>
+    <button class="btn btn-primary w-100" type="submit">Login</button>
+    <div *ngIf="errorMsg" class="text-danger mt-2">{{ errorMsg }}</div>
+  </form>
+</div>
