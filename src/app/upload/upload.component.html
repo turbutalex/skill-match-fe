@@ -1,0 +1,15 @@
+<div class="upload-container">
+  <h2>Upload Resume</h2>
+
+  <input type="file" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx" />
+
+  <button (click)="onUpload()" [disabled]="!selectedFile">Upload</button>
+
+  <div *ngIf="uploadSuccess" class="success-message">
+    Resume uploaded successfully! 🎉
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>
