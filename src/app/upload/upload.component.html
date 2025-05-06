@@ -9,6 +9,15 @@
     Resume uploaded successfully! 🎉
   </div>
 
+  <div *ngIf="parsedResume" class="parsed-data">
+    <h3>Parsed Resume Info:</h3>
+    <p><strong>Name:</strong> {{ parsedResume.parsedName }}</p>
+    <p><strong>Email:</strong> {{ parsedResume.email }}</p>
+    <p><strong>Phone:</strong> {{ parsedResume.phone }}</p>
+    <p><strong>Skills:</strong> {{ parsedResume.skills.join(', ') }}</p>
+  </div>
+
+
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>

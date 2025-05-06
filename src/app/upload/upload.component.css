@@ -21,3 +21,10 @@ button {
   margin-top: 1rem;
   color: red;
 }
+
+.parsed-data {
+  text-align: left;
+  margin-top: 1.5rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}

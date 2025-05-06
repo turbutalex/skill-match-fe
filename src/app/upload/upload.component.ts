@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { NgIf } from "@angular/common";
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
+  imports: [
+    NgIf
+  ],
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {
   selectedFile: File | null = null;
   uploadSuccess = false;
   errorMessage = '';
+  parsedResume: any = null
 
   constructor(private http: HttpClient) {}
 
@@ -34,6 +39,7 @@ export class UploadComponent {
         console.log('Upload success:', response);
         this.uploadSuccess = true;
         this.errorMessage = '';
+        this.parsedResume = response
       },
       error: (err: HttpErrorResponse) => {
         console.error('Upload failed:', err);
